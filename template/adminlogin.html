@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+  {% for i in messages %}
+						{{i}}
+					{% endfor %}
+    <div class="card-group mb-3" >
+      
+        <div class="card mr-3" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpJhsI1tQiMc-hvks78URmZdaLEjRAB4fFyQ&usqp=CAU');">
+          <img class="card-img-top img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfE8DNFGbzvQumrfCuFMj0MTzDHCkh0Qa3lA&usqp=CAU" alt="Card image cap" style="width: 250px; height: 250px; padding-top: 50px; margin-left: 50px;">
+          <div class="card-body">
+            <h5 class="card-title"><a href="{% url 'addings' %}">ADD STUDENT</a></h5>
+          </div>
+          <img class="card-img-top img-fluid" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/courses-1996019-1686855.png" alt="Card image cap" style="width: 250px; height: 250px; padding-top: 50px; margin-left: 50px;">
+            <div class="card-body">
+              <h5 class="card-title"><a href="{% url 'addcourse' %}">ADD COURSE</a></h5>
+            </div>
+        </div>
+        <div class="card mr-3"  style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpJhsI1tQiMc-hvks78URmZdaLEjRAB4fFyQ&usqp=CAU');">
+            <img class="card-img-top img-fluid" src="https://s.pngkit.com/png/small/126-1268278_faqs-for-students-college-student-students-icon.png" alt="Card image cap" style="width: 250px; height: 250px; padding-top: 50px; margin-left: 50px;">
+            <div class="card-body">
+              <h5 class="card-title"><a href="{% url 'showdetails' %}">SHOW STUDENTS</a></h5>
+            </div>
+            <img class="card-img-top img-fluid" src="https://www.freeiconspng.com/thumbs/teachers-icon/teachers-icon-0.png" alt="Card image cap" style="width: 250px; height: 250px; padding-top: 50px; margin-left: 50px;">
+            <div class="card-body">
+              <h5 class="card-title"><a href="{% url 'teacher' %}">SHOW TEACHERS</a></h5>
+            </div>
+          </div>
+          <ul class="nav-item">
+            <a class="nav-link " href="{% url 'logout' %}">LOGOUT</a>
+          </ul>
+    </div>
+</body>
+</html>

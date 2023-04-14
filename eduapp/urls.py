@@ -1,0 +1,26 @@
+from django.urls import path,include
+from . import views
+urlpatterns = [
+    path('',views.home,name='home'),
+    path('sign',views.sign,name='sign'),
+    path('backin',views.backin,name='backin'),
+    path('alogin',views.alogin,name='alogin'),
+    path('addcourse',views.addcourse,name='addcourse'),
+    path('create',views.create,name='create'),
+    path('log',views.log,name='log'),
+    path('super',views.super,name='super'),
+    path('addc',views.addc,name='addc'),
+    path('addings',views.addings,name='addings'),
+    path('add',views.add,name='add'),
+    path('showdetails',views.showdetails,name='showdetails'),
+    path('editpage/<int:id>',views.editpage,name='editpage'),
+    path('editdetails/<int:id>',views.editdetails,name='editdetails'),
+    path('delete/<int:id>',views.delete,name='delete'),
+    path('super',views.super,name='super'),
+    path('logout',views.logout,name='logout'),
+    path('tlogin',views.tlogin,name='tlogin'),
+    path('seeprofile',views.seeprofile,name='seeprofile'),
+    path('teacher',views.teacher,name='teacher'),
+    path('deladmin/<int:id>',views.deladmin,name='deladmin'),
+    path('teachedit',views.teachedit,name='teachedit'),
+]

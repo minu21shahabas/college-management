@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+*:focus {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #DDD;
+  font-size: 16px;
+  color: #222;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  background-image: url('https://wallpapers.com/images/featured/beautiful-3vau5vtfa3qn7k8v.jpg');
+}
+.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 350px;
+  height:700px;
+  background: url('https://wallpapers.com/images/featured/4nho1u78dzvt1meo.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 2px 2px 0;
+}
+.right .loginwith {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: black;
+  text-align: center;
+}
+
+#login-box {
+  position: relative;
+  margin: 5% auto;
+  width: 700px;
+  height: 700px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+}
+
+h1 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 38px;
+  text-align: center;
+  
+}
+
+
+
+
+
+input[type="submit"] {
+  margin-top: 28px;
+  width: 120px;
+  height: 32px;
+  background: #16a085;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+input[type="submit"]:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+.or {
+  position: absolute;
+  top: 250px;
+  left: 330px;
+  width: 40px;
+  height: 40px;
+  background: #DDD;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  line-height: 40px;
+  text-align: center;
+}
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"]{
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus 
+input[type="number"]:focus
+input[type="email"]:focus{
+  border-bottom: 2px solid #16a085;
+  color: #16a085;
+  transition: 0.2s ease;
+}
+
+
+.right .loginwith {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: black;
+  text-align: center;
+}
+
+button.social-signin {
+  margin-bottom: 20px;
+  width: 220px;
+  height: 36px;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+button.social-signin:hover,
+button.social-signin:focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin.facebook {
+  background: #141414;
+}
+
+        </style>
+</head>
+<body>
+  <ul class="nav nav-pills card-header-pills">
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'logout' %}" style="color: white;"><b>LOGOUT </b></a>
+    </li>
+  </ul>
+  <ul class="nav nav-pills card-header-pills">
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'seeprofile' %}" style="color: white;"><b>SEE MY PROFILE </b></a>
+    </li>
+  </ul>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div id="login-box" style="height: 1000px; background-image: url('https://a-static.besthdwallpaper.com/river-mountain-scenery-wallpaper-2048x1536-81252_26.jpg');">
+      
+      <div class="left">
+          <h1><b> EDIT ME</b></h1>
+          <label><b>FIRST NAME :</b></label>
+          <input type="text" name="fname"  value="{{users.user.first_name}}" />
+          <label><b>LAST NAME :</b></label>
+          <input type="text" name="lname" placeholder="lastname"  value="{{users.user.last_name}}" />
+          <label><b>AGE :</b></label>
+          <input type="number" name="age" placeholder="enter age"  value="{{users.age}}"/>
+          <label><b>ADDRESS :</b></label>
+          <input type="text" name="adrs" placeholder="enter address"  value="{{users.address}}" />
+          <label><b>EMAIL-ID :</b></label>
+          <input type="email" name="mail" placeholder="E-mail"  value="{{users.user.email}}"/>
+          <label><b>PHONE NUMBER :</b></label>
+          <input type="text" name="phone" placeholder="phone number"  value="{{users.number}}"/>
+          <label><b>USERNAME :</b></label>
+          <input type="text" name="uname" placeholder="Username"  value="{{users.user.username}}"/>
+          <label><b>UPLOAD YOUR PHOTO :</b></label>
+          <input type="file" placeholder="upload your photo" name="pic">
+          {% if users.image %}
+          <img src="{{users.image.url}}" style="width: 100px;height: 100px;">
+          {% endif %}
+          
+          <input type="submit" name="signup_submit" value="edit here" />
+        </div>
+        
+    </div>
+  </form>
+</body>
+</html>
